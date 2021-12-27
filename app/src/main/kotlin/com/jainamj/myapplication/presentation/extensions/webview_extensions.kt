@@ -20,7 +20,7 @@ fun WebSettings.setDefaults() {
     displayZoomControls = true
 }
 
-fun WebView.loadDataUrl(newsLetterDataUrl: String?) =
+fun WebView.loadDataUrl(newsLetterDataUrl: String) =
         loadDataWithBaseURL(null, newsLetterDataUrl,
                 CONST_MIME_TYPE, CONST_UTF, null)
 
@@ -35,7 +35,7 @@ private fun getChromeClient(progressBar: ProgressBar): WebChromeClient =
             override fun onCreateWindow(view: WebView?, isDialog: Boolean, isUserGesture: Boolean, resultMsg: Message?):
                     Boolean {
                 val data = view?.hitTestResult?.extra
-                view?.loadUrl(data)
+                view?.loadUrl(data!!)
                 return false
             }
 

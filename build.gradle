@@ -1,7 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlinV = '1.4.10'
+    ext.kotlinV = '1.6.10'
     repositories {
         google()
         jcenter()
@@ -11,14 +11,14 @@ buildscript {
 
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.1'
+        classpath 'com.android.tools.build:gradle:4.0.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinV"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
-        classpath 'com.google.gms:google-services:4.3.4'
+        classpath 'com.google.gms:google-services:4.3.10'
         classpath 'com.google.dagger:hilt-android-gradle-plugin:2.28-alpha'
-        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.3.0'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.8.1'
 
     }
 }
@@ -34,19 +34,19 @@ allprojects {
     ext {
         appName = "Boilerplate app"
         minSdkV = 19
-        targetSdkV = 28
-        compileSdkV = 28
+        targetSdkV = 31
+        compileSdkV = 31
         applicationId = "com.jainamj.myapplication"
         testInstrumentationRunner = 'androidx.test.runner.AndroidJUnitRunner'
         testApplicationId = "test.com.jainamj.myapplication"
 
-        ankoV = "0.10.1"
+        ankoV = "0.10.8"
         buildToolsV = "27.0.3"
-        firebaseAuthV = "19.4.0"
-        firebaseMessagingV = "20.3.0"
+        firebaseAuthV = "21.0.1"
+        firebaseMessagingV = "23.0.0"
         glideV = "4.11.0"
-        gmsVersion = "20.1.2"
-        gsonV = "2.8.5"
+        gmsVersion = "20.1.3"
+        gsonV = "2.8.6"
         leakcanaryV = "1.5.1"
         liveDataV = "1.1.1"
         mosbyV = "3.1.1"
@@ -54,14 +54,14 @@ allprojects {
         okhttpV = "3.7.0"
         permissionDispatcherV = "3.1.0"
         retrofitV = "2.8.1"
-        retrofitRx = "2.3.0"
-        roomV = "2.2.5"
+        retrofitRx = "2.4.0"
+        roomV = "2.4.0"
         rxAndroidV = "2.1.0"
         rxKotlinV = "2.1.0"
         rxV = "2.2.0"
         stethoV = "1.5.1"
         supportLibV = "27.1.1"
-        timberV = "4.6.1"
+        timberV = "4.7.1"
     }
 
 }
