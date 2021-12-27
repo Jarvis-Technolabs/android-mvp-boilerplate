@@ -2,6 +2,7 @@ package com.jainamj.myapplication.base.mvp
 
 import android.app.Dialog
 import android.os.Bundle
+import android.widget.Toast
 import androidx.annotation.CallSuper
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatDelegate
@@ -29,7 +30,9 @@ abstract class BaseActivity<V : BaseView, P : BasePresenter<V>> : MvpActivity<V,
         }
     }
 
-    override fun clientError(errorMessage: String) = toast(errorMessage)
+    override fun clientError(errorMessage: String) {
+        toast(errorMessage)
+    }
 
     override fun networkError(errorMessage: String) {
         Timber.e(errorMessage)
@@ -49,7 +52,9 @@ abstract class BaseActivity<V : BaseView, P : BasePresenter<V>> : MvpActivity<V,
 
     private fun isNetworkConnected(): Boolean = ConnectivityUtils.isConnectedToInternet(this)
 
-    override fun onTimeout() = longToast(R.string.timeoutError)
+    override fun onTimeout() {
+        longToast(R.string.timeoutError)
+    }
 
     override fun serverError(errorMessage: String) {
         Timber.e(errorMessage)
@@ -62,12 +67,13 @@ abstract class BaseActivity<V : BaseView, P : BasePresenter<V>> : MvpActivity<V,
         // TODO: go back to login screen
     }
 
-    override fun unexpectedError(errorMessage: String) = toast(errorMessage)
+    override fun unexpectedError(errorMessage: String) {
+        toast(errorMessage)
+    }
 
     override fun unexpectedError(exception: RuntimeException) {
         exception.message?.let { toast(it) }
     }
-
 
 
     @CallSuper
